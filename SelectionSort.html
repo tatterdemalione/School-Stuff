@@ -1,0 +1,40 @@
+<html>
+<body>
+
+<script>
+	var numbers = [];
+	var length;
+	var index = 0;
+	var firstunsorted = 0;
+	var indexofsmallest;
+	var tempitem;
+
+	length=parseInt(prompt("Enter length of array"));
+	while (index < length)
+	{
+		numbers[index]= Math.floor(Math.random()*11);
+		index = index+1;
+	}
+	alert("unsorted array =" +numbers);
+	while (firstunsorted < length-1)
+	{
+		  indexofsmallest = firstunsorted;
+		  index = firstunsorted + 1;
+		  while (index <= length-1)
+		  {
+			    if(numbers[index] <= numbers[indexofsmallest])
+			    {
+				    indexofsmallest = index;
+			    }
+			    index = index + 1;
+		  }
+		  tempitem = numbers[firstunsorted];
+		  numbers[firstunsorted] = numbers[indexofsmallest];
+		  numbers[indexofsmallest] = tempitem;
+		  firstunsorted = firstunsorted + 1;
+	}
+	alert("sorted array =" + numbers);
+</script>
+
+</body>
+</html>
