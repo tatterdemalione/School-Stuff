@@ -9,16 +9,27 @@ public static void main(String[] args){
 } 
 
 
-  /* Prints multiplication table */ 
-    static void multiplicationTable(int n){
-   for(int row = 0; row<n;row++){    
-    
-	for(int column=0;column<n;column++){
-        	System.out.printf("%4d",row*column); //uses printf to convert the output to a decimal number
-        }
-    System.out.println(); //new line
-   } 
-  }
+  /* Prints out an aesthetically pleasing multiplication table, up to about 30x30 */ 
+	static void multiplicationTable(int n)
+	{
+   		int diff = 0;
+		System.out.printf("%6d", 0);
+   		for(int i=1;i<n;i++){
+   			System.out.printf("%4d",i);
+   		}	
+   		System.out.println();
+   		for(int i=0;i<(n*8);i++){
+   			System.out.print("_");
+   		}
+   		System.out.println();
+   		for(int row = 0; row<n;row++){ 
+			System.out.print(diff + " " + "|");
+			diff++;   
+			for(int column=0;column<n;column++){
+        			System.out.printf("%4d",row*column); //uses printf to print the output evenly spaced        		
+			}
+    			System.out.println(); //new line
+   		} 
+  	}
 
 } //end of class
-
